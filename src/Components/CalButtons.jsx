@@ -10,16 +10,17 @@ export default function CalButtons ({ navigation, buttonColor, fontColor, shadow
     let deviceHeight = Dimensions.get('window').height;
     let deviceWidth = Dimensions.get('window').width;
 
-    const Btn = ({symbol}) => {
+    const Btn = ({ symbol, screen }) => {
         return (
-            <TouchableOpacity style={{ 
+            <TouchableOpacity onPress={() => navigation.navigate(screen)} 
+            style={{ 
+                backgroundColor: buttonColor,
+                borderRadius: buttonRadius,
+                justifyContent: 'center',
+                alignItems: 'center',
+                height: 90,
                 width: 90,
                 margin: 3,
-                height: 90,
-                alignItems: 'center',
-                justifyContent: 'center',
-                borderRadius: buttonRadius,
-                backgroundColor: buttonColor,
             }}>
                 <Text style={{ fontSize: fontSize, color: fontColor,}}>
                     {symbol}
@@ -55,7 +56,7 @@ export default function CalButtons ({ navigation, buttonColor, fontColor, shadow
                 width: deviceWidth, 
                 flexWrap: 'wrap', 
             }}>
-                <Btn symbol={'AC'} />
+                <Btn screen='settings' symbol={'AC'} />
                 <Btn symbol={'C'} />
                 <Btn symbol={'%'} />
                 <Btn symbol='&#247;' />

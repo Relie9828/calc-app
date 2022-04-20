@@ -6,7 +6,14 @@ import AppLoading from 'expo-app-loading';
 import { useFonts } from 'expo-font';
 
 
-export default function SetDarkMode ({ navigation, headerBackgroundColor, shadowColor, switchColor, toggled, setDarkMode }) {
+export default function SetDarkMode ({ 
+    navigation, 
+    headerBackgroundColor, 
+    shadowColor, 
+    switchColor, 
+    toggled, 
+    setDarkMode,
+}) {
 
     let deviceHeight = Dimensions.get('window').height;
     let deviceWidth = Dimensions.get('window').width;
@@ -27,6 +34,7 @@ export default function SetDarkMode ({ navigation, headerBackgroundColor, shadow
             <TouchableOpacity style={{ width: 35 }}>
                 <Icon onPress={setDarkMode} name={toggled ? 'toggle-switch-outline' : 'toggle-switch-off-outline'} 
                 color={switchColor} size={35} />
+                {/* <Icon name='home' fill='black' /> */}
             </TouchableOpacity>
         </View>
     )
