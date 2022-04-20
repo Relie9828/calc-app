@@ -1,6 +1,6 @@
 import { View, Text, Image, FlatList, TouchableOpacity, Vibration, Pressable, Dimensions, Alert } from 'react-native';
 import React, { useState, useEffect, useCallback, useRef, useContext } from 'react';
-import { Icon } from '@ui-kitten/components';
+import Icon  from 'react-native-vector-icons/MaterialCommunityIcons';
 import AppLoading from 'expo-app-loading';
 import { useFonts } from 'expo-font';
 
@@ -11,7 +11,7 @@ export default function SetDarkMode ({ navigation, headerBackgroundColor, shadow
     let deviceWidth = Dimensions.get('window').width;
 
     return (
-        <View style={{ 
+        <TouchableOpacity onPress={setDarkMode} style={{ 
             shadowOffset: { width: 0, height: 1.5, },
             backgroundColor: headerBackgroundColor,
             justifyContent: 'flex-end',
@@ -23,8 +23,8 @@ export default function SetDarkMode ({ navigation, headerBackgroundColor, shadow
             shadowRadius: 1,
             height: 100,
         }}>
-            <Icon onPress={setDarkMode} name={toggled ? 'toggle-right-outline' : 'toggle-left-outline'} 
-            fill={switchColor} width={35} height={35} />
-        </View>
+            <Icon name={toggled ? 'toggle-switch-outline' : 'toggle-switch-off-outline'} 
+            color={switchColor} size={38} width={35} height={35} />
+        </TouchableOpacity>
     )
 }
