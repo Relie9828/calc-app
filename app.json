@@ -3,8 +3,17 @@
     "name": "calc-app",
     "slug": "calc-app",
     "version": "1.0.0",
+    "sdkVersion": "44.0.0",
     "assetBundlePatterns": [
       "**/*"
-    ]
+    ],
+    "jsEngine": "jsc",
+    "orientation": "portrait",
+    "runtimeVersion": "2.718",
+    "backgroundColor": "#f5f5f5",
+    "userInterfaceStyle": "light",
+    "ios": {
+      "bundleIdentifier": "org.name.fomosocial"
+    }
   }
 }

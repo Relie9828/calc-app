@@ -1,11 +1,11 @@
 import { ApplicationProvider, IconRegistry, } from '@ui-kitten/components';
 import React, { useEffect, useState, useRef } from 'react';
 import { StyleSheet, Text, View, Platform, StatusBar } from 'react-native';
+import SetDarkMode from './src/Componnents/SetDarkMode';
 import CalButtons from './src/Componnents/CalButtons';
 import CalcOutput from './src/Componnents/CalcOutput';
 import { EvaIconsPack } from '@ui-kitten/eva-icons';
 import * as eva from '@eva-design/eva';
-import SetDarkMode from './src/Componnents/SetDarkMode';
 
 export default function App() {
 
