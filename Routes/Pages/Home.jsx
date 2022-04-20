@@ -11,7 +11,7 @@ export default function Home ({ navigation, setDarkMode, lightMode, toggled }) {
     
     let fontColor = lightMode ? 'white' : 'black';
     let buttonColor = lightMode ? 'black' : 'white';
-    let switchColor = lightMode ? 'black' : '#3366FF';
+    let switchColor = lightMode ? 'black' : 'white';
     let shadowColor = lightMode ? 'black' : 'white';
     let resultFontColor = lightMode ? 'black' : 'white';
     let resultColor = lightMode ? 'whitesmoke' : 'white';

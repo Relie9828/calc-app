@@ -12,7 +12,7 @@ export default function CalButtons ({ navigation, buttonColor, fontColor, shadow
 
     const Btn = ({ symbol, screen }) => {
         return (
-            <TouchableOpacity onPress={() => navigation.navigate(screen)} 
+            <TouchableOpacity onLongPress={() => navigation.navigate(screen)} 
             style={{ 
                 backgroundColor: buttonColor,
                 borderRadius: buttonRadius,
