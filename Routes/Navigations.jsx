@@ -18,9 +18,6 @@ export default function Navigations ({ navigation, setDarkMode, lightMode, toggl
             options={{ headerShown: false, gestureEnabled: true }}
             children={props=> <Home {...props} STYLES={STYLES} TRANSITIONS={TRANSITIONS}
             toggled={toggled} setDarkMode={setDarkMode} lightMode={lightMode} />} />
-            <HomeStack.Screen name='settings' 
-            children={props=> <Settings {...props} STYLES={STYLES} TRANSITIONS={TRANSITIONS}
-            toggled={toggled} setDarkMode={setDarkMode} lightMode={lightMode} /> } />
         </HomeStack.Navigator>
     )
 }
