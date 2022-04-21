@@ -24,11 +24,11 @@ export default function App() {
   return (
     <ApplicationProvider {...eva} theme={eva.dark}>
       <IconRegistry icons={EvaIconsPack} />
-        <NavigationContainer>
-          <StatusBar barStyle={STYLES} animated={true} showHideTransition={TRANSITIONS} />
-          <Navigations STYLES={STYLES} TRANSITIONS={TRANSITIONS} 
-          setDarkMode={setDarkMode} lightMode={lightMode} toggled={toggled} />
-        </NavigationContainer>
+      <NavigationContainer>
+        <StatusBar barStyle={STYLES} animated={true} showHideTransition={TRANSITIONS} />
+        <Navigations STYLES={STYLES} TRANSITIONS={TRANSITIONS} 
+        setDarkMode={setDarkMode} lightMode={lightMode} toggled={toggled} />
+      </NavigationContainer>
     </ApplicationProvider>
   );
 }
