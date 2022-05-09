@@ -1,28 +1,16 @@
 import { ApplicationProvider, IconRegistry, } from '@ui-kitten/components';
 import { StyleSheet, Text, View, Platform, StatusBar } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
 import React, { useEffect, useState, useRef } from 'react';
-import SetDarkMode from './src/Componnents/SetDarkMode';
-import CalButtons from './src/Componnents/CalButtons';
-import CalcOutput from './src/Componnents/CalcOutput';
 import { EvaIconsPack } from '@ui-kitten/eva-icons';
+import Navigations from './Routes/Navigations';
 import * as eva from '@eva-design/eva';
+import Home from './Routes/Pages/Home';
 
 export default function App() {
 
-  let fontSize = 35;
-  let buttonRadius = 25;
-  
   const [toggled, setToggled] = useState(false);
   const [lightMode, setLightMode] = useState(true);
-  
-  let fontColor = lightMode ? 'white' : 'black';
-  let buttonColor = lightMode ? 'black' : 'white';
-  let switchColor = lightMode ? 'black' : 'white';
-  let shadowColor = lightMode ? 'black' : 'white';
-  let resultFontColor = lightMode ? 'black' : 'white';
-  let resultColor = lightMode ? 'whitesmoke' : 'white';
-  let backgroundColor = lightMode ? 'white' : '#0C0407';
-  let headerBackgroundColor = lightMode ? 'white' : 'black';
   
   const TRANSITIONS = 'fade';
   const STYLES = lightMode ? 'dark-content' : 'light-content';
@@ -35,17 +23,12 @@ export default function App() {
 
   return (
     <ApplicationProvider {...eva} theme={eva.dark}>
-      <View style={Platform.select({
-        ios:{ flex: 1, alignItems: 'center', justifyContent: 'flex-start', backgroundColor: backgroundColor, }
-      })}>
-      <StatusBar barStyle={STYLES} animated={true} showHideTransition={TRANSITIONS} />
-        <IconRegistry icons={EvaIconsPack} />
-        <View style={{ alignItems: 'center', justifyContent: 'center', }}>
-          <SetDarkMode setDarkMode={setDarkMode} headerBackgroundColor={headerBackgroundColor} shadowColor={shadowColor} switchColor={switchColor} toggled={toggled} />
-          <CalcOutput shadowColor={shadowColor} resultColor={resultColor} resultFontColor={resultFontColor} />
-          <CalButtons buttonColor={buttonColor} fontSize={fontSize} fontColor={fontColor} shadowColor={shadowColor} buttonRadius={buttonRadius} />
-        </View>
-      </View>
+      <IconRegistry icons={EvaIconsPack} />
+      <NavigationContainer>
+        <StatusBar barStyle={STYLES} animated={true} showHideTransition={TRANSITIONS} />
+        <Navigations STYLES={STYLES} TRANSITIONS={TRANSITIONS} 
+        setDarkMode={setDarkMode} lightMode={lightMode} toggled={toggled} />
+      </NavigationContainer>
     </ApplicationProvider>
   );
 }
