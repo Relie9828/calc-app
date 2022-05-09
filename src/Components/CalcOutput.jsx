@@ -3,9 +3,8 @@ import React, { useState, useEffect, useCallback, useRef, useContext } from 'rea
 import AppLoading from 'expo-app-loading';
 import { useFonts } from 'expo-font';
 
-export default function CalcOutput ({ navigation, resultFontColor, resultColor, shadowColor }) {
+export default function CalcOutput ({firstNumberDisplay, firstNumber, secondNumber, operation, value, resultFontColor, resultColor, shadowColor }) {
 
-    const [value, setValue] = useState('0')
     let calculator_value = value
 
     let deviceHeight = Dimensions.get('window').height;
@@ -21,9 +20,14 @@ export default function CalcOutput ({ navigation, resultFontColor, resultColor, 
                 height: 180,
                 padding: 24,
             }}>
-                <Text style={{ fontSize: 50, color: resultFontColor, }}>
-                    {calculator_value}
-                </Text>
+                <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'center', }}>
+                    <Text style={{ fontSize: 50, color: resultFontColor, }}>
+                        {calculator_value}
+                        {secondNumber}
+                    </Text>
+                        <Text style={{ fontSize: 35, }}>{operation}</Text>
+                        {firstNumberDisplay()}
+                </View>
             </View>
         </View>
     )
